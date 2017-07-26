@@ -1,31 +1,33 @@
-# VBDM
-----------------------
+======
+VBDM
+======
+-----------
 A value-based decision-making battery to asses impulsive and risky behavior 
-----------------------
-This is an Octave\Matlab implementation of four behavioral tasks:
-    
-    1. Delay Discounting (DD) 
-    
-    2. Probability Discounting for Gains (PDG) 
-    
-    3. Probability Discounting for Losses (PDL)
-    
-    4. Mixed Gambles (MG). 
+-----------
+
+This is an Octave \\ Matlab implementation of four behavioral tasks:
+
+    1) Delay Discounting (DD) 
+    2) Probability Discounting for Gains (PDG) 
+    3) Probability Discounting for Losses (PDL)
+    4) Mixed Gambles (MG). 
 
 It starts with a GUI to setup the battery and collect some demographic data and runs in
-full screen provided the Psychtoolbox (http://psychtoolbox.org/)  has already been installed.
-    
-        Author: Shakoor Pooseh
-        Contact: Shakoor.Pooseh@tu-dresden.de 
+full screen provided the Psychtoolbox_ has already been installed.
+
+   
+        :Authors: Shakoor Pooseh
+        :Contact: Shakoor.Pooseh@tu-dresden.de 
 
 Running the battery
 -------------------
-1. Downlod or clone the repository to your local drive.
-2. Navigate to the directory.
-3. Run the function "runVBDM.m" in Matlab
-4. Fill in the required information in the GUI.
-5. Select the tasks you would like to run.
-6. Press "Run All".
+- Downlod or clone the repository to your local drive.
+- Navigate to the directory.
+- Run the function "runVBDM.m" in Matlab
+- Fill in the required information in the GUI.
+.. image:: images/guiVBDM.png
+- Select the tasks you would like to run.
+- Press "Run All".
 The output is saved in a directory called "data" next to "runVBDM.m".
 
 A brief Introduction
@@ -59,3 +61,5 @@ are played presenting amounts of 1--40 for gains and 5--20 for losses in Euros. 
 50, was chosen according to data acquired by previous implementations of the algorithm to end up  
 with stable estimates. At the beginning of the MG task participants receive €10 as "house money".
 During all tasks, offers are randomly assigned to the left or to the right of the screen.
+
+.. _Psychtoolbox: http: //psychtoolbox.org/
