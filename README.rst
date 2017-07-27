@@ -5,15 +5,16 @@ VBDM
 A value-based decision-making battery to asses impulsive and risky behavior 
 -----------
 
-This is an Octave \\ Matlab implementation of four behavioral tasks:
+This is an Octave (4.2.0) \\ Matlab (17a) implementation of four behavioral tasks:
 
     1) Delay Discounting (DD) 
     2) Probability Discounting for Gains (PDG) 
     3) Probability Discounting for Losses (PDL)
     4) Mixed Gambles (MG). 
 
-It starts with a GUI to setup the battery and collect some demographic data and runs in
-full screen provided the Psychtoolbox_ has already been installed.
+It starts to input some demographic information of a participant and the 
+setup of the battery through some dialog boxes or a GUI  and runs in
+full screen provided that Psychtoolbox_ has already been installed.
 
    
         :Authors: Shakoor Pooseh
