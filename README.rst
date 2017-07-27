@@ -23,12 +23,15 @@ Running the battery
 -------------------
 - Downlod or clone the repository to your local drive.
 - Navigate to the directory.
-- Run the function "runVBDMnoGUI.m" in Octave or "runVBDM.m" in Matlab.
-- Fill in the required information in the GUI.
+- In Octave: run the function "runVBDMnoGUI.m".
+- Fill in the required information through the upcoming dialog boxes.
+.. image:: images/dlgVBDM.png
+- In Matlab: run the function  "runVBDM.m".
+- Fill in the required information in the GUI (Matlab).
 .. image:: images/guiVBDM.png
 - Select the tasks you would like to run.
-- Press "Run All".
-The output is saved in a directory called "data" next to "runVBDM.m".
+
+The output is saved in a directory called "data" next to "runVBDM.m"\"runVBDMnoGUI.m".
 
 A brief Introduction
 ------------
