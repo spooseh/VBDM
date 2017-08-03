@@ -1,13 +1,13 @@
 function [Payout,aborted] = runMG(genInfo,auxVars)
 
-T.start = GetSecs;	% timestamp to record length of entire experiment
-aborted = 0;
-maxPay  = auxVars.maxPay;
-maxLoss = auxVars.maxLoss;
+T.start  = GetSecs;	% timestamp to record length of entire experiment
+aborted  = 0;
+maxPay   = auxVars.maxPay;
+maxLoss  = auxVars.maxLoss;
+fileName = genInfo.fileName;
+
 while 1
     nTrials  = genInfo.nTrials;
-    fileName = [genInfo.fileName '_' datestr(now,'HHMM');];
-    genInfo.fileName = fileName;
        
     gainr      = [1 40]; 			% range of gains offered
     gainrPay   = [1 maxPay];  % First offers less than the max to be paid to make sure of payment
@@ -125,5 +125,5 @@ if genInfo.doSave
     if aborted
         fileName = [fileName '_aborted'];
     end
-    save(['data/' fileName '.mat'],toSave{:});
+    save(['./data/' fileName '.mat'],toSave{:});
 end
