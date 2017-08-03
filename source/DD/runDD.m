@@ -1,20 +1,18 @@
 function [Payout,aborted] = runDD(genInfo,auxVars)
 
-T.start = GetSecs;	% timestamp to record length of entire experiment
-aborted = 0;
-bgCol  = auxVars.bgCol;
-iti    = auxVars.intTrialInt;
-linSpc  = auxVars.linSpc;
-txtCol  = auxVars.txtCol;
-txtW    = auxVars.txtW;
-wd      = auxVars.wd;
-wdw    = auxVars.wdw;
-wdh    = auxVars.wdh;
-
+T.start  = GetSecs;	% timestamp to record length of entire experiment
+aborted  = 0;
+bgCol    = auxVars.bgCol;
+iti      = auxVars.intTrialInt;
+linSpc   = auxVars.linSpc;
+txtCol   = auxVars.txtCol;
+txtW     = auxVars.txtW;
+wd       = auxVars.wd;
+wdw      = auxVars.wdw;
+wdh      = auxVars.wdh;
+fileName = genInfo.fileName;
 while 1
     nTrials  = genInfo.nTrials;
-    fileName = [genInfo.fileName '_' datestr(now,'HHMM');];
-    genInfo.fileName = fileName;
     
     xr       = 3:50;
     xrPay    = 3:19;  % First offers less than the max to be paid to make sure of payment
