@@ -137,5 +137,5 @@ if genInfo.doSave
     if aborted
         fileName = [fileName '_aborted'];
     end
-    save(['data/' fileName '.mat'],toSave{:});
+    save(['./data/' fileName '.mat'],toSave{:});
 end
