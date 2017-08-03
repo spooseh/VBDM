@@ -2,7 +2,6 @@ function runTasks(genInfo,taskList)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Setup screen
 clear MEX
-genInfo.date = datestr(now,'yymmdd');
 auxVars = setupPsych(genInfo.doDebug);
 auxVars.giveFeedback = genInfo.giveFeedback;
 auxVars.instLang     = genInfo.language;
@@ -17,7 +16,7 @@ else
         rng('shuffle');                  % MATLAB R2012 and later
     end
     if     strcmp(genInfo.language,'DE')
-        auxVars.currency = '€';
+        auxVars.currency = 'â‚¬';
     elseif strcmp(genInfo.language,'EN')
         auxVars.currency = '$';
     end
@@ -50,13 +49,14 @@ task = {'DD','PDG','PDL','MG'};
 for t = 1:N
     f = str2func(['run' task{tmp(t)}]);
     auxVars.curTask = task{tmp(t)};
-    genInfo.fileName = sprintf('034_%08s_%s_%s_%s',genInfo.subjn,genInfo.session,task{t},genInfo.date);
+    genInfo.date = datestr(now,'yymmdd_HHMM');
+    genInfo.fileName = sprintf('%s_%08s_%s_%s_%s',genInfo.ProjectID,genInfo.subjn,genInfo.session,task{tmp(t)},genInfo.date);
     try
         [x,aborted] = f(genInfo,auxVars);
         Payout{tmp(t)} = x;
     catch ex
         if genInfo.doSave
-            save(['data/' genInfo.fileName '_crashed.mat']);
+            save(['./data/' genInfo.fileName '_crashed.mat']);
         end
         getReport(ex,'extended')
         break
@@ -66,8 +66,8 @@ for t = 1:N
     if t < length(taskList)-1
         if     strcmp(genInfo.language,'DE')
             text = ['Sie haben den Test erfolgreich beendet. '...
-                    'Bitte drücken Sie die rechte Pfeiltaste, wenn Sie '...
-                    'bereit sind, mit dem nächsten Test zu beginnen.'];
+                    'Bitte drÃ¼cken Sie die rechte Pfeiltaste, wenn Sie '...
+                    'bereit sind, mit dem nÃ¤chsten Test zu beginnen.'];
         elseif strcmp(genInfo.language,'EN')
             text = ['You have finished the task. '...
                     'Please press NEXT when you are ready '...
@@ -81,6 +81,6 @@ end
 if aborted
     abortExp(auxVars);
 else
-    showAllPayments(auxVars,Payout,taskList,genInfo.doPay,genInfo.language);
+    showAllPayments(genInfo,auxVars,Payout,taskList);
 end
 closeExperiment;
