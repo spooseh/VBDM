@@ -1,12 +1,10 @@
 function [Payout,aborted] = runPDL(genInfo,auxVars)
 
-T.start = GetSecs;	% timestamp to record length of entire experiment
-aborted = 0;
+T.start  = GetSecs;	% timestamp to record length of entire experiment
+aborted  = 0;
+fileName = genInfo.fileName;
 while 1
     nTrials  = genInfo.nTrials;
-    fileName = [genInfo.fileName '_' datestr(now,'HHMM');];
-    genInfo.fileName = fileName;
-    
     xr    = 3:50;
     xrPay = 3:15; % First offers less than the max to be paid to make sure of payment
     deltamin = 3;				% minimum difference between two offers
@@ -108,11 +106,11 @@ while 1
 end
 if genInfo.doSave
     toSave = {'T','aborted','allOffersPDL','auxVars','bhPDL','bhi','bhvPDL',...
-        'acceptedPDL','khPDL','khi','khvPDL','rejectedPDL',...
+        'acceptedPDL','khPDL','khi','khvPDL','rejectedPDL','payout',...
         'probs','posSureResp','randTrials','xr','genInfo'};
     
     if aborted
         fileName = [fileName '_aborted'];
     end
-    save(['data/' fileName '.mat'],toSave{:});
+    save(['./data/' fileName '.mat'],toSave{:});
 end
