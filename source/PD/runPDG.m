@@ -1,11 +1,10 @@
 function [Payout,aborted] = runPDG(genInfo,auxVars)
 
-T.start = GetSecs;	% timestamp to record length of entire experiment
-aborted = 0;
+T.start  = GetSecs;	% timestamp to record length of entire experiment
+aborted  = 0;
+fileName = genInfo.fileName;
 while 1
     nTrials  = genInfo.nTrials;
-    fileName = [genInfo.fileName '_' datestr(now,'HHMM');];
-    genInfo.fileName = fileName;
     
     xr    = 3:50;
     xrPay = 3:19; % First offers less than the max to be paid to make sure of payment
@@ -108,11 +107,11 @@ while 1
 end
 if genInfo.doSave
     toSave = {'T','aborted','allOffersPDG','auxVars','bhPDG','bhi','bhvPDG',...
-        'acceptedPDG','khPDG','khi','khvPDG','rejectedPDG',...
+        'acceptedPDG','khPDG','khi','khvPDG','rejectedPDG','payout',...
         'probs','posSureResp','randTrials','xr','genInfo'};
     
     if aborted
         fileName = [fileName '_aborted'];
     end
-    save(['data/' fileName '.mat'],toSave{:});
+    save(['./data/' fileName '.mat'],toSave{:});
 end
