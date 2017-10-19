@@ -5,7 +5,7 @@ VBDM
 A value-based decision-making battery to asses impulsive and risky behavior 
 -----------
 
-This is an Octave (4.2.0) \\ Matlab (17a) implementation of four behavioral tasks:
+This is an Octave_ (4.2.0) \\ Matlab_ (17a) implementation of four behavioral tasks:
 
     1) Delay Discounting (DD) 
     2) Probability Discounting for Gains (PDG) 
@@ -66,5 +66,7 @@ are played presenting amounts of 1--40 for gains and 5--20 for losses in Euros. 
 with stable estimates. At the beginning of the MG task participants receive €10 as "house money".
 During all tasks, offers are randomly assigned to the left or to the right of the screen.
 
+.. _Octave:                https://www.gnu.org/software/octave/
+.. _Matlab:                https://www.mathworks.com/products.html?s_tid=gn_ps
 .. _Psychtoolbox:          http: //psychtoolbox.org/
 .. _`Pooseh et al. 2017`:  https://link.springer.com/article/10.3758%2Fs13428-017-0866-x
