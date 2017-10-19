@@ -1,6 +1,6 @@
 function varargout = runVBDM(varargin)
 % Begin initialization code - DO NOT EDIT
-addpath(genpath('./source'))
+addpath(genpath('./source'));
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
@@ -48,7 +48,7 @@ handles.runPDL = 1;
 handles.runMG  = 1;
 
 if handles.doDebug
-    handles.nTrials = 1;
+    handles.nTrials = 3;
 end
 
 set(findobj('Tag','prjID'),'String',handles.ProjectID);
@@ -445,7 +445,7 @@ while 1
     answer = inputdlg(prompt,dlg_title,1);
     if isempty(answer)
         return;
-    elseif strcmp(pass,answer{1});
+    elseif strcmp(pass,answer{1})
         break; 
     end
 end
@@ -492,7 +492,7 @@ msgbox({'This application runs selected tasks from the',...
         'used for the layout and presentation of the task are not stored.',...
         '',...
         'Section of Systems Neuroscience','Department of Psychiatry and Psychotherapy',...
-        'Faculty of Medicine Carl Gustav Carus','Technische Universit√§t Dresden',...
+        'Faculty of Medicine Carl Gustav Carus','Technische Universit‰t Dresden',...
         'Contact:',...
         '        Shakoor.Pooseh@tu-dresden.de'})
 
