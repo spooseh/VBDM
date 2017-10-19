@@ -1,10 +1,10 @@
-function showAllPayments(genInfo,auxVars,Payout,taskList)
+function showAllPayments(auxVars,Payout,taskList,doPay,lang)
 
 wd     = auxVars.wd;
 txtCol = auxVars.txtCol;
 linSpc = auxVars.linSpc;
 txtW   = auxVars.txtW;
-lang   = genInfo.language;
+cur    = auxVars.currency;
 if doPay
     if     strcmp(lang,'DE')
         text = {'  ','Aufgabe',cur,'Tagen','Summe'};
@@ -49,16 +49,14 @@ else
     payText = '\n';
 end
 if     strcmp(lang,'DE')
-    text = ['Vielen Dank fÃ¼r Ihre Teilnahme!\n'...
+    text = ['Vielen Dank für Ihre Teilnahme!\n'...
             payText...
-           '\nBitte drÃ¼cken Sie zum Beenden die rechte Pfeiltaste.'];
+           '\nBitte drücken Sie zum Beenden die rechte Pfeiltaste.'];
 elseif strcmp(lang,'EN')
     text = ['Thank you very much for your participation!\n'...
             payText...
             '\nPlease press NEXT to terminate.'];
 end
-fid = fopen(['./data/pay_' genInfo.subjn '.txt'],'w');
-fprintf(fid,payText);
-fclose(fid);
+
 DrawFormattedText(wd,double(text),'center','center',txtCol,txtW,[],[],.8*linSpc);
 getRarrow(auxVars,0);
