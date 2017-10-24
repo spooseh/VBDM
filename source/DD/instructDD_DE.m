@@ -1,5 +1,5 @@
 function aborted = instructDD_DE(auxVars)
-
+% 
 wd     = auxVars.wd;
 wdw    = auxVars.wdw;
 wdh    = auxVars.wdh;
