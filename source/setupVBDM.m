@@ -151,7 +151,7 @@ while 1
             txt  = strcat(txt,info);
             choice = questdlg(txt,'Please confirm!','Run','Modify','Cancel','Cancel');
             switch choice
-                case 'Continue'
+                case 'Run'
                     break;
                 case 'Modify'
                     continue;
