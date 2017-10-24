@@ -74,7 +74,7 @@ if length(func) < i;    func{i} = [];    end
 Pages = i;
 page = 1;
 while 1
-	DrawFormattedText(wd,tx{page},'center',ypos{page},txtCol,txtW,[],[],linSpc);
+	DrawFormattedText(wd,tx{page},'center','center',txtCol,txtW,[],[],linSpc);
     switch showUrns(page)
         case 1
             %instDDShow(auxVars,posSure,xSure,xRisk,choiceBox)
