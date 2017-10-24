@@ -23,6 +23,10 @@ i=i+1;
     func{i}='getLRarrow';
     showUrns(i) = 0;
 i=i+1; 
+    tx{i} = 'Sie sollen sich zwischen zwei Geldbeträgen entscheiden.'; 
+    func{i}='getLRarrow';
+    showUrns(i) = 0;
+i=i+1; 
 	tx{i} = ['Stellen Sie sich vor, der eine Geldbetrag wird Ihnen jetzt ausgezahlt, '...
              'der andere wird zu dem angegebenen Zeitpunkt an Sie überwiesen.'];
     func{i}='getLRarrow';
