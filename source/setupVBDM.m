@@ -45,8 +45,10 @@ while 1
         txt  = sprintf('%s\n',mis{:});
         txt1 = sprintf('Missing information:\n %s',txt);
         errMsg = errordlg(txt1,'Error');
-        set(errMsg, 'WindowStyle', 'modal');
-        uiwait(errMsg);
+        if ~exist('OCTAVE_VERSION', 'builtin')
+            set(errMsg, 'WindowStyle', 'modal');
+            uiwait(errMsg);
+        end
         continue
     else
         txt = {
@@ -122,15 +124,19 @@ while 1
         txt  = sprintf('%s\n',mis{:});
         txt1 = sprintf('Missing information (please give 0 or 1):\n %s',txt);
         errMsg = errordlg(txt1,'Error');
-        set(errMsg, 'WindowStyle', 'modal');
-        uiwait(errMsg);
+        if ~exist('OCTAVE_VERSION', 'builtin')
+            set(errMsg, 'WindowStyle', 'modal');
+            uiwait(errMsg);
+        end
         continue
     else
         tmp = {chooseDD,choosePDG,choosePDL,chooseMG};
         if sum(strcmp(tmp,'1'))== 0
             errMsg = errordlg('Select at least one task!','Error');
-            set(errMsg, 'WindowStyle', 'modal');
-            uiwait(errMsg);
+            if ~exist('OCTAVE_VERSION', 'builtin')
+                set(errMsg, 'WindowStyle', 'modal');
+                uiwait(errMsg);
+            end
             continue;
         else
             txt = {
