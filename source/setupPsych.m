@@ -1,5 +1,5 @@
 function auxVars = setupPsych(debug) 
-
+% Task setup and layout 
 bgCol = 200;	% in grayscale
 if (~debug && ~ismac && ~IsLinux)
     HideCursor
@@ -49,7 +49,7 @@ if wdh < 864       % 1024 x 768 full screen
     rectL = round([wdw/2-42*wBox, .90*wdh, wdw/2-35*wBox, .98*wdh]);
     rectR = round([wdw/2+35*wBox, .90*wdh, wdw/2+42*wBox, .98*wdh]);
 else
-    wBox = 13; % Gives a 20° visual angle on 70 cm
+    wBox = 13; % Gives a 20Â° visual angle on 70 cm
     rectL = round([wdw/2-44*wBox, .90*wdh, wdw/2-35*wBox, .98*wdh]);
     rectR = round([wdw/2+35*wBox, .90*wdh, wdw/2+44*wBox, .98*wdh]);
 end
@@ -71,13 +71,13 @@ auxVars.back   = rectL + round([w/5,0,0   ,0]);
 auxVars.next   = rectR + round([  0,0,-w/6,0]);
 txtsize = 0;
 Screen('TextSize',wd,txtsize);			% Set size of text
-[~,~,wt] = DrawFormattedText(wd,'NÄCHSTE');
+[~,~,wt] = DrawFormattedText(wd,'NÃ„CHSTE');
 x = .8*w;
 dw  = wt(3)-wt(1)-x; 
 while dw < 0
 	txtsize = txtsize + 1; 
     Screen('TextSize',wd,txtsize);
-    [~,~,wt] = DrawFormattedText(wd,'NÄCHSTE');
+    [~,~,wt] = DrawFormattedText(wd,'NÃ„CHSTE');
     dw  = wt(3)-wt(1)-x;
 end
 auxVars.arrTxt = txtsize;
