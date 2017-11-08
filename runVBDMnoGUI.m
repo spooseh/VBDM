@@ -21,7 +21,7 @@ function runVBDMnoGUI
 name = 'runVBDMnoGUI.m';
 tmp  = fileparts(which(name));
 rDir = tmp(1:end-length(name));
-addpath(genpath(fullfile(rDir,'./source')));
+addpath(genpath(fullfile(rDir,'source')));
 genInfo.expVersion = '3.0.0717';
 genInfo.timedStimulus = 1;
 genInfo.giveFeedback  = 1;
