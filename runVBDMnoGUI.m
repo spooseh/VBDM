@@ -19,8 +19,7 @@ function runVBDMnoGUI
 % % Technische Universität Dresden
 
 name = 'runVBDMnoGUI.m';
-tmp  = fileparts(which(name));
-rDir = tmp(1:end-length(name));
+rDir  = fileparts(which(name));
 addpath(genpath(fullfile(rDir,'source')));
 genInfo.expVersion = '3.0.0717';
 genInfo.timedStimulus = 1;
