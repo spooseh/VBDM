@@ -1,5 +1,5 @@
 function [page,aborted] = getRarrow(auxVars,page)
-
+% Navigation arrows
 aborted = 0;
 arrCol  = auxVars.txtCol;
 bgCol   = auxVars.bgCol;
@@ -15,7 +15,7 @@ linSpc  = auxVars.linSpc;
 txtW    = auxVars.txtW;
 
 if strcmp(auxVars.instLang,'DE')
-    txt = {'NÄCHSTE'};
+    txt = {'NÃ„CHSTE'};
 else
     txt = {'NEXT'};
 end
