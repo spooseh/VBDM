@@ -18,7 +18,7 @@ else
         rng('shuffle');                  % MATLAB R2012 and later
     end
     if     strcmp(genInfo.language,'DE')
-        auxVars.currency = '€';
+        auxVars.currency = 'â‚¬';
     elseif strcmp(genInfo.language,'EN')
         auxVars.currency = '$';
     end
@@ -51,7 +51,8 @@ task = {'DD','PDG','PDL','MG'};
 for t = 1:N
     f = str2func(['run' task{tmp(t)}]);
     auxVars.curTask = task{tmp(t)};
-    genInfo.fileName = sprintf('034_%08s_%s_%s_%s',genInfo.subjn,genInfo.session,task{tmp(t)},genInfo.date);
+    subjn = [repmat('0',1,8-length(genInfo.subjn)),genInfo.subjn]; % To be compatible with Octave
+    genInfo.fileName = sprintf('%s_%s_%s_%s_%s',genInfo.ProjectID,subjn,genInfo.session,task{tmp(t)},genInfo.date);
     try
         [x,aborted] = f(genInfo,auxVars);
         if isempty(x)
@@ -75,8 +76,8 @@ for t = 1:N
     if t < length(taskList)-1
         if     strcmp(genInfo.language,'DE')
             text = ['Sie haben den Test erfolgreich beendet. '...
-                    'Bitte drücken Sie die rechte Pfeiltaste, wenn Sie '...
-                    'bereit sind, mit dem nächsten Test zu beginnen.'];
+                    'Bitte drÃ¼cken Sie die rechte Pfeiltaste, wenn Sie '...
+                    'bereit sind, mit dem nÃ¤chsten Test zu beginnen.'];
         elseif strcmp(genInfo.language,'EN')
             text = ['You have finished the task. '...
                     'Please press NEXT when you are ready '...
