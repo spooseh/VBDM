@@ -1,5 +1,5 @@
 function aborted = instructDD_DE(auxVars)
-
+% Instructions for DD
 wd     = auxVars.wd;
 wdw    = auxVars.wdw;
 wdh    = auxVars.wdh;
@@ -15,30 +15,30 @@ yposm='center';
 i=i+1;
 	ypos{i}=yposm;
 	tx{i} = ['Der 1. Test steht bereit.\n'...
-             'Jetzt erklären wir die Aufgabe. '...
-             'Sie können mit der '...
-             'rechten und linken Pfeiltaste vor- und zurück blättern.'];
+             'Jetzt erklÃ¤ren wir die Aufgabe. '...
+             'Sie kÃ¶nnen mit der '...
+             'rechten und linken Pfeiltaste vor- und zurÃ¼ck blÃ¤ttern.'];
     func{i}='getRarrow';
     showUrns(i) = 0;
 i=i+1; 
 	ypos{i}=yposm;
-	tx{i} = 'Sie sollen sich zwischen zwei Geldbeträgen entscheiden.'; 
+	tx{i} = 'Sie sollen sich zwischen zwei GeldbetrÃ¤gen entscheiden.'; 
     func{i}='getLRarrow';
     showUrns(i) = 0;
 i=i+1; 
 	ypos{i}=yposm;
 	tx{i} = ['Stellen Sie sich vor, der eine Geldbetrag wird Ihnen jetzt ausgezahlt, '...
-             'der andere wird zu dem angegebenen Zeitpunkt an Sie überwiesen.'];
+             'der andere wird zu dem angegebenen Zeitpunkt an Sie Ã¼berwiesen.'];
     func{i}='getLRarrow';
     showUrns(i) = 0;
 i = i+1;
   ypos{i} = yposm;
-  tx{i} = ['Damit Sie sich die Aufgabe besser vorstellen können, '...
+  tx{i} = ['Damit Sie sich die Aufgabe besser vorstellen kÃ¶nnen, '...
            'wird Ihnen nun ein Beispieldurchgang gezeigt. '...
-           'Sie müssen in diesem Beispiel noch keine Auswahl treffen. '...
+           'Sie mÃ¼ssen in diesem Beispiel noch keine Auswahl treffen. '...
            'Sehen Sie sich das Beispiel bitte nur an. '...
-           'Sie können mit der '...
-           'rechten und linken Pfeiltaste vor- und zurück blättern.'];
+           'Sie kÃ¶nnen mit der '...
+           'rechten und linken Pfeiltaste vor- und zurÃ¼ck blÃ¤ttern.'];
   func{i} = 'getLRarrow';
   showUrns(i) = 0;    
 i = i+1; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -48,9 +48,9 @@ i = i+1; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     showUrns(i) = 1;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 i=i+1; 
 	ypos{i}=yposm;
-    tx{i} = ['Für Ihre Auswahl benutzen Sie die linke oder die rechte Pfeiltaste. '...
-             'Sie haben 5 Sekunden Zeit für Ihre Entscheidung. '...
-             'Ihre Wahl wird mit einem grünen Rahmen angezeigt.'];
+    tx{i} = ['FÃ¼r Ihre Auswahl benutzen Sie die linke oder die rechte Pfeiltaste. '...
+             'Sie haben 5 Sekunden Zeit fÃ¼r Ihre Entscheidung. '...
+             'Ihre Wahl wird mit einem grÃ¼nen Rahmen angezeigt.'];
     func{i}='getLRarrow';
     showUrns(i) = 0;
 i = i+1; 
@@ -65,15 +65,15 @@ i = i+1;
     showUrns(i) = 3;
 i = i+1; 
 	ypos{i} = yposm;
-    tx{i} = ['Am Ende der Aufgabe wählt der Computer zufällig '...
-             'einen Durchgang aus, und die zuvor von Ihnen gewählte '...
+    tx{i} = ['Am Ende der Aufgabe wÃ¤hlt der Computer zufÃ¤llig '...
+             'einen Durchgang aus, und die zuvor von Ihnen gewÃ¤hlte '...
              'Alternative wird zum entsprechenden Zeitpunkt an '...
              'Sie ausgezahlt.'];   
     func{i} = 'getLRarrow';
     showUrns(i) = 0;
 i = i+1; 
 	ypos{i} = yposm;
-    tx{i} = 'Bitte starten Sie den 1. Test, indem Sie die rechte Pfeiltaste drücken.';
+    tx{i} = 'Bitte starten Sie den 1. Test, indem Sie die rechte Pfeiltaste drÃ¼cken.';
     func{i} = 'getLRarrow';
     showUrns(i) = 0;
     
@@ -87,19 +87,19 @@ while 1
             %instDDShow(auxVars,posSure,xSure,xRisk,choiceBox)
             instDDShow(auxVars,1,5,[10,14],0);
             txU = 'Zum Beispiel 5 Euro jetzt oder 10 Euro in 2 Wochen.';
-            txD = ['Entscheiden Sie sich einfach immer für die Alternative, '...
+            txD = ['Entscheiden Sie sich einfach immer fÃ¼r die Alternative, '...
                    'die Ihnen mehr zusagt.'];
             DrawFormattedText(wd,txU,'center',ypos{page},txtCol,txtW,[],[],linSpc,[],upMsg);
             DrawFormattedText(wd,txD,'center',ypos{page},txtCol,txtW,[],[],linSpc,[],loMsg);
         case 2
             instDDShow(auxVars,1,5,[10,14],1);
-            txU = 'Wenn Sie sich für 5 Euro jetzt entscheiden:';
-            txD = 'Ihre Wahl wird dann mit einem grünen Rahmen angezeigt.';
+            txU = 'Wenn Sie sich fÃ¼r 5 Euro jetzt entscheiden:';
+            txD = 'Ihre Wahl wird dann mit einem grÃ¼nen Rahmen angezeigt.';
             DrawFormattedText(wd,txU,'center',ypos{page},txtCol,txtW,[],[],linSpc,[],upMsg);
             DrawFormattedText(wd,txD,'center',ypos{page},txtCol,txtW,[],[],linSpc,[],loMsg);
         case 3
             instDDShow(auxVars,1,5,[10,14],-1);
-            txU = ['Oder für 10 Euro in 2 Wochen:'];
+            txU = ['Oder fÃ¼r 10 Euro in 2 Wochen:'];
             DrawFormattedText(wd,txU,'center',ypos{page},txtCol,txtW,[],[],linSpc,[],upMsg);
     end
     [page,aborted] = eval([func{page} '(auxVars,page);']); % must contain 'getLRarrow' command 
@@ -108,7 +108,7 @@ while 1
 end
 
 for k = 1:3
-	text = {['Der nächste Teil fängt in ' num2str(4-k) ' Sekunden an.']};
+	text = {['Der nÃ¤chste Teil fÃ¤ngt in ' num2str(4-k) ' Sekunden an.']};
 	displaytext(text,wd,wdw,wdh,txtCol,1,0);
 end
 
