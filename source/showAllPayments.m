@@ -1,5 +1,5 @@
 function showAllPayments(auxVars,Payout,taskList,doPay,lang)
-
+% Shows the rewards to be paid
 wd     = auxVars.wd;
 txtCol = auxVars.txtCol;
 linSpc = auxVars.linSpc;
@@ -49,9 +49,9 @@ else
     payText = '\n';
 end
 if     strcmp(lang,'DE')
-    text = ['Vielen Dank für Ihre Teilnahme!\n'...
+    text = ['Vielen Dank fÃ¼r Ihre Teilnahme!\n'...
             payText...
-           '\nBitte drücken Sie zum Beenden die rechte Pfeiltaste.'];
+           '\nBitte drÃ¼cken Sie zum Beenden die rechte Pfeiltaste.'];
 elseif strcmp(lang,'EN')
     text = ['Thank you very much for your participation!\n'...
             payText...
