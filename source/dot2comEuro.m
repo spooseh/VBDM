@@ -1,4 +1,4 @@
 function txt = dot2comEuro(rew)
-
-txt = sprintf('%d,%02d €',floor(rew),int64(mod(rew*100,100)));
+% Separates the cents with a comma
+txt = sprintf('%d,%02d â‚¬',floor(rew),int64(mod(rew*100,100)));
 txt = double(txt);
