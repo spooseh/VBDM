@@ -19,6 +19,7 @@ KbName('UnifyKeyNames'); % need this for KbName to behave
 Screen('TextFont',wd,'Arial');
 Screen('TextStyle', wd, 0);
 Screen('Preference', 'TextAntiAliasing', 2);
+Screen('Preference', 'TextRenderer', 1);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Times
 auxVars.fbTime       = 1;
 auxVars.intTrialInt  = 0.5;
