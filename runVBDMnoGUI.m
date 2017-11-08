@@ -16,9 +16,12 @@ function runVBDMnoGUI
 % % Section of Systems Neuroscience
 % % Department of Psychiatry and Psychotherapy
 % % Faculty of Medicine Carl Gustav Carus
-% % Technische Universit‰t Dresden
+% % Technische Universit√§t Dresden
 
-addpath(genpath('./source'))
+name = 'runVBDMnoGUI.m';
+tmp  = fileparts(which(name));
+rDir = tmp(1:end-length(name));
+addpath(genpath(fullfile(rDir,'./source')));
 genInfo.expVersion = '3.0.0717';
 genInfo.timedStimulus = 1;
 genInfo.giveFeedback  = 1;
