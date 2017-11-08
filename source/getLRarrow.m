@@ -1,5 +1,5 @@
 function [page,aborted] = getLRarrow(auxVars,page)
-
+% Navigation arrows
 aborted = 0;
 arrCol  = auxVars.txtCol;
 bgCol   = auxVars.bgCol;
@@ -16,7 +16,7 @@ txtW    = auxVars.txtW;
 
 
 if strcmp(auxVars.instLang,'DE')
-    txt = {'NÄCHSTE','ZURÜCK'};
+    txt = {'NÃ„CHSTE','ZURÃœCK'};
 else
     txt = {'NEXT','BACK'};
 end
