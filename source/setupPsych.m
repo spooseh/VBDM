@@ -9,6 +9,9 @@ end
 AssertOpenGL;
 imagingmode = kPsychNeedFastBackingStore;	% flip takes ages without this
 Screen('Preference','Verbosity',0);
+Screen('Preference', 'TextAntiAliasing', 2);
+Screen('Preference', 'TextRenderer', 1);
+Screen('Preference','TextEncodingLocale','UTF-8');
 if debug;
     Screen('Preference','SkipSyncTests',2); % ONLY do this for quick debugging;
     wd = Screen('OpenWindow',0,bgCol,[100 100 1124 868],[],2,[],[],imagingmode); % make small PTB screen on my large screen
@@ -18,8 +21,6 @@ end
 KbName('UnifyKeyNames'); % need this for KbName to behave
 Screen('TextFont',wd,'Arial');
 Screen('TextStyle', wd, 0);
-Screen('Preference', 'TextAntiAliasing', 2);
-Screen('Preference', 'TextRenderer', 1);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Times
 auxVars.fbTime       = 1;
 auxVars.intTrialInt  = 0.5;
