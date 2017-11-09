@@ -19,7 +19,7 @@ else
         rng('shuffle');                  % MATLAB R2012 and later
     end
     if     strcmp(genInfo.language,'DE')
-        auxVars.currency = '€';
+        auxVars.currency = char(8364);
     elseif strcmp(genInfo.language,'EN')
         auxVars.currency = '$';
     end
