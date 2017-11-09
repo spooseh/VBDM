@@ -11,6 +11,7 @@ if exist('OCTAVE_VERSION', 'builtin')
     rand('twister',sum(1000*clock));
     auxVars.currency = '$';
 else
+    feature('DefaultCharacterSet', 'windows-1252');
     if verLessThan('matlab','7.14')
         rand('twister',sum(1000*clock)); % MATLAB R2011 and earlier
     else
