@@ -10,7 +10,7 @@ txtW     = auxVars.txtW;
 wd       = auxVars.wd;
 wdw      = auxVars.wdw;
 wdh      = auxVars.wdh;
-fileName = genInfo.fileName;
+genInfo.fileName = [genInfo.fileName '_' datestr(now,'HHMM')];
 while 1
     nTrials  = genInfo.nTrials;
     
@@ -135,7 +135,7 @@ if genInfo.doSave
         'bhi','bhvDD','acceptedDD','dr','genInfo','khDD','khi',...
         'khvDD','payout','posSureResp','rejectedDD','randTrials','xr'};
     if aborted
-        fileName = [fileName '_aborted'];
+        genInfo.fileName = [genInfo.fileName '_aborted'];
     end
-    save(['./data/' fileName '.mat'],toSave{:});
+    save(['./data/' genInfo.fileName '.mat'],toSave{:});
 end
