@@ -1,5 +1,5 @@
 function showAllPayments(auxVars,Payout,taskList,doPay,lang)
-% Shows the rewards to be paid
+% Shows the rewards to be paid 
 wd     = auxVars.wd;
 txtCol = auxVars.txtCol;
 linSpc = auxVars.linSpc;
