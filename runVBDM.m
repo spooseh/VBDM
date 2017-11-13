@@ -221,6 +221,7 @@ genInfo.doSave        = handles.doSave;
 runTasks(genInfo,toRun);
 javaaddpath(which('MatlabGarbageCollector.jar'));
 jheapcl;
+rmpath(genpath('./source'));
 fprintf('\n');
 
 function prjID_Callback(hObject, ~, handles)
