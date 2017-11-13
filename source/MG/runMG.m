@@ -4,8 +4,7 @@ T.start  = GetSecs;	% timestamp to record length of entire experiment
 aborted  = 0;
 maxPay   = auxVars.maxPay;
 maxLoss  = auxVars.maxLoss;
-fileName = genInfo.fileName;
-
+genInfo.fileName = [genInfo.fileName '_' datestr(now,'HHMM')];
 while 1
     nTrials  = genInfo.nTrials;
        
@@ -123,7 +122,7 @@ if genInfo.doSave
         'lossr','payout','posSureResp','randTrials','rejectedMG','win'};
     
     if aborted
-        fileName = [fileName '_aborted'];
+        genInfo.fileName = [genInfo.fileName '_aborted'];
     end
-    save(['./data/' fileName '.mat'],toSave{:});
+    save(['./data/' genInfo.fileName '.mat'],toSave{:});
 end
