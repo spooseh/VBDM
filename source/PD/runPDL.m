@@ -2,7 +2,7 @@ function [Payout,aborted] = runPDL(genInfo,auxVars)
 
 T.start  = GetSecs;	% timestamp to record length of entire experiment
 aborted  = 0;
-fileName = genInfo.fileName;
+genInfo.fileName = [genInfo.fileName '_' datestr(now,'HHMM')];
 while 1
     nTrials  = genInfo.nTrials;
     xr    = 3:50;
@@ -110,7 +110,7 @@ if genInfo.doSave
         'probs','posSureResp','randTrials','xr','genInfo'};
     
     if aborted
-        fileName = [fileName '_aborted'];
+        genInfo.fileName = [genInfo.fileName '_aborted'];
     end
-    save(['./data/' fileName '.mat'],toSave{:});
+    save(['./data/' genInfo.fileName '.mat'],toSave{:});
 end
