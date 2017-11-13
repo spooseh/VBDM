@@ -3,6 +3,7 @@ function runTasks(genInfo,taskList)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Setup screen
 clear MEX
 crashed = 0;
+genInfo.date = datestr(now,'yymmdd');
 auxVars = setupPsych(genInfo.doDebug);
 auxVars.giveFeedback = genInfo.giveFeedback;
 auxVars.instLang     = genInfo.language;
@@ -52,7 +53,6 @@ for t = 1:N
     f = str2func(['run' task{tmp(t)}]);
     auxVars.curTask = task{tmp(t)};
     subjn = [repmat('0',1,8-length(genInfo.subjn)),genInfo.subjn]; % To be compatible with Octave
-    genInfo.date = datestr(now,'yymmdd_HHMM');
     genInfo.fileName = sprintf('%s_%s_%s_%s_%s',genInfo.ProjectID,subjn,genInfo.session,task{tmp(t)},genInfo.date);
     try
         [x,aborted] = f(genInfo,auxVars);
